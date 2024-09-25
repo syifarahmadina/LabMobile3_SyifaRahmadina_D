@@ -23,6 +23,7 @@ Hal - hal yang ada di dalam aplikasi:
 ![image](https://github.com/user-attachments/assets/7ca66550-6d74-4219-b636-8c975789c035)
 
 2. Halaman Login: Pengguna harus memasukkan nama pengguna dan kata sandi. Jika data cocok, pengguna dapat mengakses halaman beranda. Ini ditampilkan menu login dan pop-up jika berhasil masuk.
+
 ![image](https://github.com/user-attachments/assets/72814db8-c0b0-440a-96e9-611c772801a6)
 ![image](https://github.com/user-attachments/assets/b022fa62-dadc-48eb-900b-c56d54deb053)
 
@@ -46,27 +47,39 @@ Penjelasan Kode per File
 File ini adalah titik awal aplikasi dan bertanggung jawab untuk mengatur tema dan alur navigasi awal.
 
 - **`main()`**: Fungsi utama yang menjalankan aplikasi menggunakan `runApp()`. Di sini aplikasi dimulai dengan `MyApp`.
-code:
+codenya:
 
 void main() {
   runApp(const MyApp());
 }
+
 - **`MaterialApp`**: Komponen utama Flutter yang digunakan untuk mengatur tema dan halaman awal aplikasi. Aplikasi menggunakan **tema warna ungu** (warna utama) dan **pink** (warna sekunder) yang sesuai dengan identitas Seventeen.
+codenya:
+
 theme: ThemeData(
   colorScheme: ColorScheme(
+  
     primary: Colors.purple[800]!,
+    
     secondary: Colors.pink[300]!,
+    
     // Warna lain juga diatur di sini untuk konsistensi
   ),
+  
+  
   fontFamily: 'Poppins',
-),
 
+),
 
 - **Splash Screen**: Setelah splash screen tampil selama 3 detik, pengguna secara otomatis dialihkan ke halaman login menggunakan **`Navigator.pushReplacement`**.
 codenya:
+
 Navigator.pushReplacement(
+
   context,
+  
   MaterialPageRoute(builder: (context) => const LoginPage()),
+  
 );
 
 
@@ -77,24 +90,34 @@ Ini adalah halaman login, tempat pengguna memasukkan nama pengguna dan kata sand
 - **Validasi Login**: Jika nama pengguna adalah `'CaratFan'` dan kata sandi adalah `'ShiningDiamond'`, pengguna dapat login dan diarahkan ke halaman beranda.
 
 codenya:
+
 if (_usernameController.text == 'CaratFan' &&
+
     _passwordController.text == 'ShiningDiamond') {
+    
   _saveUsername();
+  
   _showDialog('Welcome, Carat!', const HomePage());
+  
 } else {
+
   _showDialog('Oops! Wrong Credentials!', const LoginPage());
+  
 }
 
 
 - **Penyimpanan Nama Pengguna**: Menggunakan **SharedPreferences**, nama pengguna disimpan agar bisa diakses di halaman lain.
 
 codenya:
+
 SharedPreferences prefs = await SharedPreferences.getInstance();
+
 prefs.setString('username', _usernameController.text);
 
 - **Dialog**: Menampilkan pesan selamat datang jika login berhasil, atau pesan kesalahan jika login gagal.
 
 codenya:
+
 _showDialog('Welcome, Carat!', const HomePage());
 
 
@@ -104,12 +127,14 @@ Halaman beranda ini menyapa pengguna berdasarkan nama yang sudah disimpan sebelu
 - **Menampilkan Nama Pengguna**: Nama pengguna yang tersimpan ditampilkan sebagai bagian dari pesan sapaan di halaman beranda.
 
 codenya:
+
 username = prefs.getString('username') ?? 'Carat';
 
 
 - **Drawer Menu**: Terdapat menu samping (side menu) yang memungkinkan pengguna untuk bernavigasi ke halaman lain, seperti halaman **About Seventeen**.
 
 codenya:
+
 drawer: const SideMenu(),
 
 
@@ -119,15 +144,25 @@ Menu samping (side menu) ini menyediakan navigasi ke halaman **Home** dan **Abou
 - **Navigasi ke Halaman Lain**: Pengguna dapat mengklik item di menu untuk berpindah halaman menggunakan **Navigator**.
 
 codenya:
+
 ListTile(
+
   leading: const Icon(Icons.home, color: Colors.purple),
+  
   title: const Text('Home'),
+  
   onTap: () {
+  
     Navigator.pushReplacement(
+    
       context,
+      
       MaterialPageRoute(builder: (context) => const HomePage()),
+      
     );
+    
   },
+  
 ),
 
 
@@ -137,20 +172,30 @@ Halaman ini memberikan informasi tentang Seventeen, serta animasi logo **SVT** y
 - **Animasi Berputar**: Logo **SVT** akan terus berputar menggunakan **Transform.rotate** dan animasi yang diatur dengan **`_controller`**.
 
 codenya:
+
 Transform.rotate(
+
   angle: _controller.value * 2 * pi,
+  
   child: child,
+  
 );
 
 
 - **Pesan Info**: Terdapat tombol yang menampilkan pesan bahwa **Carats** (nama fandom Seventeen) selalu bersinar bersama Seventeen.
 
 codenya:
+
 ScaffoldMessenger.of(context).showSnackBar(
+
   const SnackBar(
+  
     content: Text('SVT and Carats are inseparable! 💎'),
+    
     backgroundColor: Colors.purpleAccent,
+    
   ),
+  
 );
 
 
