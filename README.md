@@ -22,16 +22,18 @@ Hal - hal yang ada di dalam aplikasi:
 1. Splash Screen: Tampilan pembuka saat aplikasi dibuka, menunjukkan pesan selamat datang selama beberapa detik sebelum dialihkan ke halaman login.
 ![image](https://github.com/user-attachments/assets/7ca66550-6d74-4219-b636-8c975789c035)
 
-2. Halaman Login: Pengguna harus memasukkan nama pengguna dan kata sandi. Jika data cocok, pengguna dapat mengakses halaman beranda.
+2. Halaman Login: Pengguna harus memasukkan nama pengguna dan kata sandi. Jika data cocok, pengguna dapat mengakses halaman beranda. Ini ditampilkan menu login dan pop-up jika berhasil masuk.
 ![image](https://github.com/user-attachments/assets/72814db8-c0b0-440a-96e9-611c772801a6)
+![image](https://github.com/user-attachments/assets/b022fa62-dadc-48eb-900b-c56d54deb053)
 
-3. Halaman Beranda: Setelah login, pengguna disambut dengan pesan yang dipersonalisasi sesuai nama pengguna.
+
+4. Halaman Beranda: Setelah login, pengguna disambut dengan pesan yang dipersonalisasi sesuai nama pengguna.
 ![image](https://github.com/user-attachments/assets/7fa09460-260b-4e68-956b-d68adb4643f3)
 
 
-4. Side Menu (Menu Samping): Navigasi menuju halaman lainnya seperti halaman informasi tentang Seventeen.
+5. Side Menu (Menu Samping): Navigasi menuju halaman lainnya seperti halaman informasi tentang Seventeen.
 
-5. Halaman About (Tentang Seventeen): Berisi informasi singkat tentang Seventeen dan animasi logo SVT yang berputar. Lalu ada button "Shine Bright with SVT!" maka nanti akan muncul tampilan dibawah page tulisan "SVT and Carats are inseparable"
+6. Halaman About (Tentang Seventeen): Berisi informasi singkat tentang Seventeen dan animasi logo SVT yang berputar. Lalu ada button "Shine Bright with SVT!" maka nanti akan muncul tampilan dibawah page tulisan "SVT and Carats are inseparable"
 ![image](https://github.com/user-attachments/assets/2b766f8c-dfc9-44b2-88ae-b8ec8d7fcb1d)
 
 
