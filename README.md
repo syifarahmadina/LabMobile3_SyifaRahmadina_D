@@ -200,6 +200,4 @@ codenya:
 
 
 ### **Kesimpulan**
-Aplikasi **Seventeen Fan App** dirancang untuk memberikan pengalaman interaktif kepada penggemar Seventeen dengan tema yang konsisten dan fitur navigasi yang mudah. Dengan halaman login, beranda, dan halaman informasi, aplikasi ini mengajarkan berbagai konsep Flutter seperti **UI design**, **state management**, dan **data persistence** menggunakan **SharedPreferences**.
-
-Aplikasi ini adalah platform ideal bagi Carat untuk tetap terhubung dengan Seventeen dan menikmati konten yang disesuaikan dengan komunitas fandom.
+Aplikasi **Seventeen App** adalah aplikasi yang mengimplementasikan konsep routes, sidemenu, login, dan local storage. Dibuat dengan tema idol kpop kesukaan dari pembuat maka jadilah aplikasi ini. 
